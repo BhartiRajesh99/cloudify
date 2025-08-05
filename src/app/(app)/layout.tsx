@@ -47,14 +47,14 @@ export default function AppLayout({
         checked={sidebarOpen}
         onChange={() => setSidebarOpen(!sidebarOpen)}
       />
-      <div className="drawer-content flex flex-col">
+      <div className="drawer-content flex flex-col min-h-screen">
         {/* Navbar */}
         <header className="w-full bg-base-200">
           <div className="navbar mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="sidebar-drawer"
-                className="btn btn-square btn-ghost drawer-button"
+                className="btn btn-square btn-ghost drawer-button "
               >
                 <MenuIcon />
               </label>
@@ -69,7 +69,7 @@ export default function AppLayout({
             <div className="flex-none flex items-center space-x-4">
               {user && (
                 <>
-                  <div className="avatar">
+                  <div className="avatar flex flex-col justify-center items-center gap-2 sm:flex-row">
                     <div className="w-8 h-8 rounded-full">
                       <img
                         src={user.imageUrl}
@@ -78,10 +78,10 @@ export default function AppLayout({
                         }
                       />
                     </div>
+                    <span className="text-sm truncate max-w-xs lg:max-w-md">
+                      {user.username || user.emailAddresses[0].emailAddress}
+                    </span>
                   </div>
-                  <span className="text-sm truncate max-w-xs lg:max-w-md">
-                    {user.username || user.emailAddresses[0].emailAddress}
-                  </span>
                   <button
                     onClick={handleSignOut}
                     className="btn btn-ghost btn-circle"
@@ -94,8 +94,8 @@ export default function AppLayout({
           </div>
         </header>
         {/* Page content */}
-        <main className="flex-grow">
-          <div className=" h-[91%] mx-auto w-full px-4 sm:px-6 lg:px-8 my-8">
+        <main className="flex-grow flex">
+          <div className="mx-auto flex-1 w-full px-4 sm:px-6 lg:px-8 my-8">
             {children}
           </div>
         </main>

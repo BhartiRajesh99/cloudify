@@ -34,7 +34,7 @@ export default function RootLayout({
       <Toaster reverseOrder={false} position="bottom-right" />
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden min-h-screen`}
         >
           {children}
         </body>

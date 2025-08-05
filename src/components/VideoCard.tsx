@@ -93,7 +93,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, onDownload }) => {
           ) : (
             !isPlayingFullVideo && (
               <>
-                <p className="absolute bg-white/20 py-3 px-8 rounded-md text-center">
+                <p className="absolute bg-white/20 py-3 md:py-2 md:px-5 px-8 rounded-md text-center">
                   This is preview. Click to play full video
                 </p>
                 <video
